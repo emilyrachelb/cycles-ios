@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>user_id</key>
+	<string></string>
+	<key>user_name</key>
+	<string></string>
+	<key>user_email</key>
+	<string></string>
+	<key>user_gender</key>
+	<string></string>
+	<key>user_age</key>
+	<string></string>
+	<key>user_birthday</key>
+	<string></string>
+	<key>user_photo_url</key>
+	<string></string>
+	<key>firebase_file_id</key>
+	<string></string>
+</dict>
+</plist>
