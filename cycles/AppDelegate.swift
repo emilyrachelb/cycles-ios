@@ -129,7 +129,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
           if let fileReference = getData!["firebase_file_id"] as? String {
             let firestoreFileRef = db.collection("users/").document(fileReference)
             firestoreFileRef.updateData([
-              "user_info.name": googleUserName
+              "user_info.name": googleUserName,
               "user_info.email": googleUserEmail
             ])
           }

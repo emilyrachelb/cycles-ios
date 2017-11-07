@@ -121,12 +121,4 @@ class HomeViewController: UIViewController, GIDSignInUIDelegate {
       "user_info.birthday": self.userBirthday
     ])
   }
-  
-  func saveHealthInfo() {
-    
-  }
-  
-  func saveSexualHealthInfo() {
-    
-  }
 }
