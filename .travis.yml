@@ -1,0 +1,7 @@
+language: objective-c
+osx_image: xcode9.1
+script:
+  - ./scripts/ci-script.bash
+xcode_project: cycles.xcworkspace
+xcode_sdk: iphonesimulator11.1
+podfile: ./Podfile

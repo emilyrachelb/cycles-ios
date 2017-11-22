@@ -4,10 +4,28 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>cycles.xcscheme</key>
+		<key>cycles.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>18</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>155A34FF1FB1227D00E70572</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>155A35171FB1227D00E70572</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>155A35221FB1227D00E70572</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

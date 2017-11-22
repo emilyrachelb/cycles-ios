@@ -109,9 +109,9 @@ class HomeViewController: UIViewController, GIDSignInUIDelegate {
   }
   
   func saveProfileInfo() {
-    databaseRef.child("user_profiles").child(self.userId).child(userAgeRef).setValue(userAge)
-    databaseRef.child("user_profiles").child(self.userId).child(userBirthdayRef).setValue(userBirthday)
-    databaseRef.child("user_profiles").child(self.userId).child(userGenderRef).setValue(userGender)
+    databaseRef.child("user_profiles").child(self.userId).child("profile").child(userAgeRef).setValue(userAge)
+    databaseRef.child("user_profiles").child(self.userId).child("profile").child(userBirthdayRef).setValue(userBirthday)
+    databaseRef.child("user_profiles").child(self.userId).child("profile").child(userGenderRef).setValue(userGender)
     
     
     let firestoreFileRef = db.collection("users/").document(firebaseFileId)

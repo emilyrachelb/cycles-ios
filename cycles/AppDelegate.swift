@@ -72,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
     let db = Firestore.firestore()
     
     // write google user data to database
-    self.databaseRef = Database.database().reference().child("user_profiles").child(googleUserId)
+    self.databaseRef = Database.database().reference().child("user_profiles").child(googleUserId).child("profile")
     self.databaseRef.observeSingleEvent(of: .value, with: { (snapshot) in
       let snapshot = snapshot.value as? NSDictionary
       
