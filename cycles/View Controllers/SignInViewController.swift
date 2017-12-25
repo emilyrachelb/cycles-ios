@@ -13,7 +13,7 @@ import Firebase
 import GoogleSignIn
 import SwiftyPlistManager
 
-class SignInViewController: UIViewController,  GIDSignInUIDelegate {
+class SignInViewController: UIViewController, GIDSignInUIDelegate {
   
   // MARK: Properties
   @IBOutlet weak var googleSignInButton: GIDSignInButton!
