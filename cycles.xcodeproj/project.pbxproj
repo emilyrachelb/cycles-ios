@@ -25,6 +25,9 @@
 		155A35481FB1369D00E70572 /* userPrefs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 155A35471FB1369D00E70572 /* userPrefs.plist */; };
 		155A354A1FB1372300E70572 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A35491FB1372300E70572 /* HomeViewController.swift */; };
 		155A354C1FB14BFD00E70572 /* GenderStringRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A354B1FB14BFD00E70572 /* GenderStringRepresentation.swift */; };
+		15640677200E7A17002E9ADC /* AppNavigationDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15640676200E7A17002E9ADC /* AppNavigationDrawerController.swift */; };
+		15640679200E7AAB002E9ADC /* AppToolbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15640678200E7AAB002E9ADC /* AppToolbarController.swift */; };
+		1564067B200E7B79002E9ADC /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1564067A200E7B79002E9ADC /* LeftMenuViewController.swift */; };
 		2F4411148969471FC4DC9ECE /* Pods_cyclesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4789181841B1BADA8D4E3D60 /* Pods_cyclesTests.framework */; };
 		8B00843DDDF43A5DCD54C9D3 /* Pods_cycles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C7C667DFC8C9EF71A5782E /* Pods_cycles.framework */; };
 		D60DDB1AE6350E1F6E26D6EA /* Pods_cyclesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D53CF2B28DA948A4B4A88F /* Pods_cyclesUITests.framework */; };
@@ -73,6 +76,9 @@
 		155A35471FB1369D00E70572 /* userPrefs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userPrefs.plist; sourceTree = "<group>"; };
 		155A35491FB1372300E70572 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		155A354B1FB14BFD00E70572 /* GenderStringRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderStringRepresentation.swift; sourceTree = "<group>"; };
+		15640676200E7A17002E9ADC /* AppNavigationDrawerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationDrawerController.swift; sourceTree = "<group>"; };
+		15640678200E7AAB002E9ADC /* AppToolbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppToolbarController.swift; sourceTree = "<group>"; };
+		1564067A200E7B79002E9ADC /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		1EF7E65FB17FE833EEB3F328 /* Pods-cycles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cycles.release.xcconfig"; path = "Pods/Target Support Files/Pods-cycles/Pods-cycles.release.xcconfig"; sourceTree = "<group>"; };
 		35D53CF2B28DA948A4B4A88F /* Pods_cyclesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cyclesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4789181841B1BADA8D4E3D60 /* Pods_cyclesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cyclesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +146,7 @@
 			children = (
 				155A35351FB123C700E70572 /* cycles.entitlements */,
 				155A35031FB1227D00E70572 /* AppDelegate.swift */,
+				15640675200E7A03002E9ADC /* Material */,
 				155A353E1FB1251000E70572 /* HealthKit */,
 				155A353D1FB1250A00E70572 /* View Controllers */,
 				155A353C1FB1250300E70572 /* Extensions */,
@@ -199,6 +206,16 @@
 				1541118B1FB207770026DC3F /* SaveBasicHealthData.swift */,
 			);
 			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		15640675200E7A03002E9ADC /* Material */ = {
+			isa = PBXGroup;
+			children = (
+				15640676200E7A17002E9ADC /* AppNavigationDrawerController.swift */,
+				15640678200E7AAB002E9ADC /* AppToolbarController.swift */,
+				1564067A200E7B79002E9ADC /* LeftMenuViewController.swift */,
+			);
+			path = Material;
 			sourceTree = "<group>";
 		};
 		27979CCD2BCB00A0B93E6AA6 /* Frameworks */ = {
@@ -420,7 +437,11 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/KSCrash/KSCrash.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyPlistManager/SwiftyPlistManager.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -437,7 +458,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KSCrash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sentry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyPlistManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -561,13 +586,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				154111881FB160AF0026DC3F /* SaveSexualHealthData.swift in Sources */,
+				15640679200E7AAB002E9ADC /* AppToolbarController.swift in Sources */,
 				1541118A1FB16ADD0026DC3F /* MucusQualityStringRepresentation.swift in Sources */,
 				155A354A1FB1372300E70572 /* HomeViewController.swift in Sources */,
 				1541118C1FB207770026DC3F /* SaveBasicHealthData.swift in Sources */,
+				15640677200E7A17002E9ADC /* AppNavigationDrawerController.swift in Sources */,
 				155A35441FB12A6C00E70572 /* DateExtension.swift in Sources */,
 				155A35421FB1262B00E70572 /* HealthKitManager.swift in Sources */,
 				155A35041FB1227D00E70572 /* AppDelegate.swift in Sources */,
 				155A354C1FB14BFD00E70572 /* GenderStringRepresentation.swift in Sources */,
+				1564067B200E7B79002E9ADC /* LeftMenuViewController.swift in Sources */,
 				155A35401FB1255E00E70572 /* SignInViewController.swift in Sources */,
 				1500B5751FC53E7000E5C3AD /* cycleDataAllModel.mlmodel in Sources */,
 			);

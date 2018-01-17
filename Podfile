@@ -18,6 +18,8 @@ target 'cycles' do
   pod 'FirebaseMessaging', '~> 2.0.4'
   pod 'FirebasePerformance', '~> 1.0.6'
   pod 'FirebaseStorage', '~> 2.0.2'
+  pod 'Material', '~> 2.2'
+  pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :tag => '3.11.1'
   pod 'SwiftyPlistManager', '~> 1.0.1'
 
   target 'cyclesTests' do
