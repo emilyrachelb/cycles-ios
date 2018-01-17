@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Firebase
 import GoogleSignIn
+import Sentry
 import SwiftyPlistManager
 
 @UIApplicationMain
@@ -22,13 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
   let plistManager = SwiftyPlistManager.shared
   
   // user info reference variables
-  let firebaseUIDref = "firebase_id"
-  let cloudstoreFileRef = "cloudstore_profile"
-  let userEmailRef = "user_email"
-  let userFirstNameRef = "user_first_name"
-  let gUserFullNameRef = "gUser_full_name"
-  let gUserPhotoUrlRef = "gUser_photo_url"
-  let gUserIdRef = "gUser_id"
+  let cloudstoreFile = "cloudstore_profile"
+  let userId = "userId"
+  let userEmail = "user_email"
+  let userFirstName = "user_first_name"
+  let userFullName = "user_full_name"
+  let userPhotoUrl = "gUser_photo_url"
   
   // new realtime database reference
   var databaseRef: DatabaseReference!
@@ -47,6 +47,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
     GIDSignIn.sharedInstance().delegate = self
     
+//    do {
+//      Client.shared = try Client(dsn: "https://a235b473014c4ecb8aa1a47cbadbd159:160b6c121c124d94826fb94227f84559@sentry.io/255032")
+//      try Client.shared?.startCrashHandler()
+//    } catch let error {
+//      print("\(error)")
+//    }
+//
+//    Client.shared?.crash()
+    return true
+  }
+  private func application (_ application: UIApplication,willFinishLaunchingWithOptions launchOptions: [NSObject : Any]?) -> Bool {
+    do {
+      Client.shared = try Client(dsn: "https://a235b473014c4ecb8aa1a47cbadbd159:160b6c121c124d94826fb94227f84559@sentry.io/255032")
+      try Client.shared?.startCrashHandler()
+    } catch let error {
+      print("\(error)")
+    }
     return true
   }
   
@@ -54,6 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
   func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
     return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
   }
+  
   
   // sign-in handler
   func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
@@ -73,23 +91,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var token = googleUserName.components(separatedBy: delimiter)
     let userFirstName = token[0]
     //save user info to the local plist file
-    self.plistManager.save(googleUserId, forKey: self.gUserIdRef, toPlistWithName: self.localUserInfo) { (err) in
+    self.plistManager.save(googleUserId, forKey: self.userId, toPlistWithName: self.localUserInfo) { (err) in
       if (err == nil) { return }
     }
     
-    self.plistManager.save(googleUserName, forKey: self.gUserFullNameRef, toPlistWithName: self.localUserInfo) { (err) in
+    self.plistManager.save(googleUserName, forKey: self.userFullName, toPlistWithName: self.localUserInfo) { (err) in
       if (err == nil) { return }
     }
     
-    self.plistManager.save(googleUserEmail, forKey: self.userEmailRef, toPlistWithName: self.localUserInfo) { (err) in
+    self.plistManager.save(googleUserEmail, forKey: self.userEmail, toPlistWithName: self.localUserInfo) { (err) in
       if (err == nil) { return }
     }
     
-    self.plistManager.save(googleUserPhotoUrl, forKey: self.gUserPhotoUrlRef, toPlistWithName: self.localUserInfo) { (err) in
+    self.plistManager.save(googleUserPhotoUrl, forKey: self.userPhotoUrl, toPlistWithName: self.localUserInfo) { (err) in
       if (err == nil) { return }
     }
     
-    self.plistManager.save(userFirstName, forKey: self.userFirstNameRef, toPlistWithName: self.localUserInfo) { (err) in
+    self.plistManager.save(userFirstName, forKey: self.userFirstName, toPlistWithName: self.localUserInfo) { (err) in
       if (err == nil) { return }
     }
     
@@ -126,7 +144,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
               print("There was an error when trying to add the document: \(err)")
             } else {
               print("Document was added with the id: \(self.cloudstoreRef!.documentID)")
-              self.plistManager.save("\(self.cloudstoreRef!.documentID)", forKey: self.cloudstoreFileRef, toPlistWithName: self.localUserInfo) { (err) in
+              self.plistManager.save("\(self.cloudstoreRef!.documentID)", forKey: self.cloudstoreFile, toPlistWithName: self.localUserInfo) { (err) in
                 if (err == nil) { return }
             }
             self.databaseRef.child("profile_id").setValue("\(self.cloudstoreRef!.documentID)")

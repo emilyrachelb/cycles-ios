@@ -22,7 +22,7 @@
 		155A35401FB1255E00E70572 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A353F1FB1255E00E70572 /* SignInViewController.swift */; };
 		155A35421FB1262B00E70572 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A35411FB1262B00E70572 /* HealthKitManager.swift */; };
 		155A35441FB12A6C00E70572 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A35431FB12A6C00E70572 /* DateExtension.swift */; };
-		155A35481FB1369D00E70572 /* userPrefs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 155A35471FB1369D00E70572 /* userPrefs.plist */; };
+		155A35481FB1369D00E70572 /* userInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 155A35471FB1369D00E70572 /* userInfo.plist */; };
 		155A354A1FB1372300E70572 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A35491FB1372300E70572 /* HomeViewController.swift */; };
 		155A354C1FB14BFD00E70572 /* GenderStringRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A354B1FB14BFD00E70572 /* GenderStringRepresentation.swift */; };
 		15640677200E7A17002E9ADC /* AppNavigationDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15640676200E7A17002E9ADC /* AppNavigationDrawerController.swift */; };
@@ -52,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		1500B5741FC53E7000E5C3AD /* cycleDataAllModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = cycleDataAllModel.mlmodel; sourceTree = "<group>"; };
+		1526B5B3200FAF13007DE6CA /* tokens.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = tokens.sh; path = "Build-Phases/tokens.sh"; sourceTree = "<group>"; };
 		154111871FB160AF0026DC3F /* SaveSexualHealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSexualHealthData.swift; sourceTree = "<group>"; };
 		154111891FB16ADD0026DC3F /* MucusQualityStringRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MucusQualityStringRepresentation.swift; sourceTree = "<group>"; };
 		1541118B1FB207770026DC3F /* SaveBasicHealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveBasicHealthData.swift; sourceTree = "<group>"; };
@@ -73,7 +74,7 @@
 		155A353F1FB1255E00E70572 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		155A35411FB1262B00E70572 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		155A35431FB12A6C00E70572 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		155A35471FB1369D00E70572 /* userPrefs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userPrefs.plist; sourceTree = "<group>"; };
+		155A35471FB1369D00E70572 /* userInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userInfo.plist; sourceTree = "<group>"; };
 		155A35491FB1372300E70572 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		155A354B1FB14BFD00E70572 /* GenderStringRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderStringRepresentation.swift; sourceTree = "<group>"; };
 		15640676200E7A17002E9ADC /* AppNavigationDrawerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationDrawerController.swift; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				155A35351FB123C700E70572 /* cycles.entitlements */,
+				1526B5B3200FAF13007DE6CA /* tokens.sh */,
 				155A35031FB1227D00E70572 /* AppDelegate.swift */,
 				15640675200E7A03002E9ADC /* Material */,
 				155A353E1FB1251000E70572 /* HealthKit */,
@@ -154,7 +156,7 @@
 				155A350E1FB1227D00E70572 /* Assets.xcassets */,
 				155A35101FB1227D00E70572 /* LaunchScreen.storyboard */,
 				155A35131FB1227D00E70572 /* Info.plist */,
-				155A35471FB1369D00E70572 /* userPrefs.plist */,
+				155A35471FB1369D00E70572 /* userInfo.plist */,
 				155A353A1FB1240D00E70572 /* GoogleService-Info.plist */,
 				1500B5741FC53E7000E5C3AD /* cycleDataAllModel.mlmodel */,
 			);
@@ -255,6 +257,7 @@
 				155A34FE1FB1227D00E70572 /* Resources */,
 				428372DF4650800486F96116 /* [CP] Embed Pods Frameworks */,
 				5A495221C147EB3B06FE093B /* [CP] Copy Pods Resources */,
+				15967328200FA4890073AE4F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -372,7 +375,7 @@
 				155A35121FB1227D00E70572 /* LaunchScreen.storyboard in Resources */,
 				155A353B1FB1240D00E70572 /* GoogleService-Info.plist in Resources */,
 				155A350F1FB1227D00E70572 /* Assets.xcassets in Resources */,
-				155A35481FB1369D00E70572 /* userPrefs.plist in Resources */,
+				155A35481FB1369D00E70572 /* userInfo.plist in Resources */,
 				155A350D1FB1227D00E70572 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +410,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cyclesUITests/Pods-cyclesUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		15967328200FA4890073AE4F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "if which sentry-cli >/dev/null; then\nexport SENTRY_ORG=samantha-emily-rachel-belnavis\nexport SENTRY_PROJECT=cycles-ios\nexport SENTRY_AUTH_TOKEN=fa5e4420de3b4b4dafacda7064cc99af7ba63be1f27c4d709204bcd0557e1c4e\nERROR=$(sentry-cli upload-dsym 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"warning: sentry-cli - $ERROR\"\nfi\nelse\necho \"warning: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi";
 			showEnvVarsInLog = 0;
 		};
 		3F51E20088422B8AF5A07513 /* [CP] Embed Pods Frameworks */ = {
@@ -771,7 +788,7 @@
 				DEVELOPMENT_TEAM = NUXWT6SEGG;
 				INFOPLIST_FILE = cycles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.samantharachelb.code.ios.cycles;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.samantharachelb.ios.cycles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -792,7 +809,7 @@
 				DEVELOPMENT_TEAM = NUXWT6SEGG;
 				INFOPLIST_FILE = cycles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.samantharachelb.code.ios.cycles;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.samantharachelb.ios.cycles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

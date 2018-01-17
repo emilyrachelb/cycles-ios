@@ -6,30 +6,24 @@
 //  Copyright © 2017 Samantha Emily-Rachel Belnavis. All rights reserved.
 //
 
-import Foundation
-import UIKit
+import Alamofire
+import AlamofireImage
 import Firebase
-import GoogleSignIn
-import SwiftyPlistManager
 import HealthKit
+import GoogleSignIn
+import Material
+import Motion
+import SwiftyPlistManager
+import UIKit
 
 class HomeViewController: UIViewController, GIDSignInUIDelegate {
   
   // global variables
-  let userPrefsPlist = "userPrefs"
+  let userPrefsPlist = "userInfo"
   let plistManager = SwiftyPlistManager.shared
   var databaseRef: DatabaseReference!
   var firestoreRef: DocumentReference? = nil
   let db = Firestore.firestore()
-  
-  // variables - "reference" specific
-  let userIdRef = "user_id"
-  let userNameRef = "user_name"
-  let userEmailRef = "user_email"
-  let userGenderRef = "user_gender"
-  let userAgeRef = "user_age"
-  let userBirthdayRef = "user_birthday"
-  let firebaseFileIdRef = "firebase_file_id"
   
   // variables - user profile
   var userId = String()
@@ -38,7 +32,7 @@ class HomeViewController: UIViewController, GIDSignInUIDelegate {
   var userGender = String()
   var userAge = String()
   var userBirthday = String()
-  var firebaseFileId = String()
+  var cloudstoreProfile = String()
   
   // variables - basic health info
   var userHeight = String()
@@ -57,7 +51,7 @@ class HomeViewController: UIViewController, GIDSignInUIDelegate {
   var sexualActivity = String()
   
   // MARK: Properties
-  @IBAction func goToMain(segue: UIStoryboardSegue) { }
+  @IBAction func goToHome(segue: UIStoryboardSegue) { }
   
   // update the user profile
   func updateUserProfile() throws -> (age: Int, biologicalSex: HKBiologicalSex, birthDate: String){
@@ -94,13 +88,14 @@ class HomeViewController: UIViewController, GIDSignInUIDelegate {
     databaseRef = Database.database().reference()
     
     // get and store values in variables
-    userId = self.plistManager.fetchValue(for: userIdRef, fromPlistWithName: userPrefsPlist) as! String!
-    firebaseFileId = self.plistManager.fetchValue(for: firebaseFileIdRef, fromPlistWithName: userPrefsPlist) as! String!
+    userId = self.plistManager.fetchValue(for: "user_id", fromPlistWithName: userPrefsPlist) as! String!
+    cloudstoreProfile = self.plistManager.fetchValue(for: "cloudstore_profile", fromPlistWithName: userPrefsPlist) as! String!
     
     // get user's age, gender and birthday from HealthKit
     let userAgeAndGender = try? updateUserProfile()
     userGender = (userAgeAndGender?.biologicalSex.stringRepresentation)!
     userAge = String(describing: userAgeAndGender?.age)
+    
     
   }
   
@@ -109,12 +104,7 @@ class HomeViewController: UIViewController, GIDSignInUIDelegate {
   }
   
   func saveProfileInfo() {
-    databaseRef.child("user_profiles").child(self.userId).child("profile").child(userAgeRef).setValue(userAge)
-    databaseRef.child("user_profiles").child(self.userId).child("profile").child(userBirthdayRef).setValue(userBirthday)
-    databaseRef.child("user_profiles").child(self.userId).child("profile").child(userGenderRef).setValue(userGender)
-    
-    
-    let firestoreFileRef = db.collection("users/").document(firebaseFileId)
+    let firestoreFileRef = db.collection("users/").document(cloudstoreProfile)
     firestoreFileRef.updateData([
       "user_info.age": self.userAge,
       "user_info.gender": self.userGender,

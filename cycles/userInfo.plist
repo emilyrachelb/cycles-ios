@@ -16,7 +16,9 @@
 	<string></string>
 	<key>gUser_full_name</key>
 	<string></string>
-	<key>gUser_id</key>
+	<key>user_id</key>
+	<string></string>
+	<key>photo_url</key>
 	<string></string>
 </dict>
 </plist>
