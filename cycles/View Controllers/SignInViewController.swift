@@ -16,6 +16,7 @@ import SwiftyPlistManager
 class SignInViewController: UIViewController,  GIDSignInUIDelegate {
   
   // MARK: Properties
+  var window: UIWindow?
   @IBOutlet weak var googleSignInButton: GIDSignInButton!
   @IBAction func unwindToHomeVC(segue:UIStoryboardSegue) {}
   
@@ -68,7 +69,12 @@ class SignInViewController: UIViewController,  GIDSignInUIDelegate {
     
     if (GIDSignIn.sharedInstance().hasAuthInKeychain()) {
       print("user already signed in")
-      self.performSegue(withIdentifier: "goToHome", sender: nil)
+      let appToolbarController = AppToolbarController(rootViewController: HomeViewController())
+      let leftMenuViewController = LeftMenuViewController()
+      
+      window = UIWindow(frame: UIScreen.main.bounds)
+      window!.rootViewController = AppNavigationDrawerController(rootViewController: appToolbarController, leftViewController: leftMenuViewController, rightViewController: nil)
+      window!.makeKeyAndVisible()
     } else {
       print("user not signed in")
     }

@@ -258,6 +258,7 @@
 				428372DF4650800486F96116 /* [CP] Embed Pods Frameworks */,
 				5A495221C147EB3B06FE093B /* [CP] Copy Pods Resources */,
 				15967328200FA4890073AE4F /* ShellScript */,
+				1585E201200FDE91009525F3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -411,6 +412,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cyclesUITests/Pods-cyclesUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		1585E201200FDE91009525F3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
 		};
 		15967328200FA4890073AE4F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

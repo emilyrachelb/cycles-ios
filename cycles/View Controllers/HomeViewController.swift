@@ -18,6 +18,8 @@ import UIKit
 
 class HomeViewController: UIViewController, GIDSignInUIDelegate {
   
+  var window: UIWindow?
+  
   // global variables
   let userPrefsPlist = "userInfo"
   let plistManager = SwiftyPlistManager.shared
@@ -79,7 +81,7 @@ class HomeViewController: UIViewController, GIDSignInUIDelegate {
     }
   }
   
-  override func viewDidLoad() {
+  open override func viewDidLoad() {
     super.viewDidLoad()
     if !(GIDSignIn.sharedInstance().hasAuthInKeychain()) {
       performSegue(withIdentifier: "unwindToLoginVC", sender: self)
@@ -96,6 +98,8 @@ class HomeViewController: UIViewController, GIDSignInUIDelegate {
     userGender = (userAgeAndGender?.biologicalSex.stringRepresentation)!
     userAge = String(describing: userAgeAndGender?.age)
     
+    view.backgroundColor = Color.grey.lighten5
+    prepareToolbar()
     
   }
   
@@ -110,5 +114,14 @@ class HomeViewController: UIViewController, GIDSignInUIDelegate {
       "user_info.gender": self.userGender,
       "user_info.birthday": self.userBirthday
     ])
+  }
+}
+
+extension HomeViewController {
+  fileprivate func prepareToolbar() {
+    guard let tc = toolbarController else { return }
+    
+    tc.toolbar.title = "Home"
+    tc.toolbar.detail = ""
   }
 }
