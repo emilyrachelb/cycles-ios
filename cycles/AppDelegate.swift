@@ -120,6 +120,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             "user_gender": "not set",
             "user_pronouns": "not set",
             "health_info": [
+              "cycle_state": "not set",
               "user_height": "not set",
               "user_weight": "not set",
             ],

@@ -9,6 +9,7 @@
 import UIKit
 import Material
 import SwiftyPlistManager
+import Firebase
 import Alamofire
 import AlamofireImage
 

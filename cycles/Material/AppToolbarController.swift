@@ -11,10 +11,12 @@ import Material
 
 class AppToolbarController: ToolbarController {
   fileprivate var menuButton: IconButton!
+  fileprivate var settingsButton: IconButton!
   
   override func prepare() {
     super.prepare()
     prepareMenuButton()
+    prepareSettingsButton()
     prepareStatusBar()
     prepareToolbar()
   }
@@ -22,8 +24,13 @@ class AppToolbarController: ToolbarController {
 
 extension AppToolbarController {
   fileprivate func prepareMenuButton() {
-    menuButton = IconButton(image: Icon.cm.menu)
+    menuButton = IconButton(image: Icon.cm.menu, tintColor: Color.red.base)
     menuButton.addTarget(self, action: #selector(handleMenuButton), for: .touchUpInside)
+  }
+  
+  fileprivate func prepareSettingsButton() {
+    settingsButton = IconButton(image: Icon.cm.moreVertical, tintColor: Color.red.base)
+    settingsButton.addTarget(self, action: #selector(handleSettingsButton), for: .touchUpInside)
   }
   
   fileprivate func prepareStatusBar() {
@@ -32,6 +39,7 @@ extension AppToolbarController {
   
   fileprivate func prepareToolbar() {
     toolbar.leftViews = [menuButton]
+    toolbar.rightViews = [settingsButton]
   }
 }
 
@@ -39,5 +47,10 @@ extension AppToolbarController {
   @objc
   fileprivate func handleMenuButton() {
     navigationDrawerController?.toggleLeftView()
+  }
+  
+  @objc
+  fileprivate func handleSettingsButton() {
+    
   }
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1500B5751FC53E7000E5C3AD /* cycleDataAllModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1500B5741FC53E7000E5C3AD /* cycleDataAllModel.mlmodel */; };
+		15155C60201568B300788156 /* home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 15155C5F201568B300788156 /* home.gpx */; };
 		154111881FB160AF0026DC3F /* SaveSexualHealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154111871FB160AF0026DC3F /* SaveSexualHealthData.swift */; };
 		1541118A1FB16ADD0026DC3F /* MucusQualityStringRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154111891FB16ADD0026DC3F /* MucusQualityStringRepresentation.swift */; };
 		1541118C1FB207770026DC3F /* SaveBasicHealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1541118B1FB207770026DC3F /* SaveBasicHealthData.swift */; };
@@ -28,6 +28,12 @@
 		15640677200E7A17002E9ADC /* AppNavigationDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15640676200E7A17002E9ADC /* AppNavigationDrawerController.swift */; };
 		15640679200E7AAB002E9ADC /* AppToolbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15640678200E7AAB002E9ADC /* AppToolbarController.swift */; };
 		1564067B200E7B79002E9ADC /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1564067A200E7B79002E9ADC /* LeftMenuViewController.swift */; };
+		15694BC4202126CC00FE087A /* rachel-apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 15694BC3202126CC00FE087A /* rachel-apartment.gpx */; };
+		15694BC6202127B000FE087A /* hospital.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 15694BC5202127B000FE087A /* hospital.gpx */; };
+		15694BC8202127D200FE087A /* wch.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 15694BC7202127D200FE087A /* wch.gpx */; };
+		156D0CD82048A25E00651DB3 /* cycleDataAllModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 156D0CD72048A25E00651DB3 /* cycleDataAllModel.mlmodel */; };
+		1581D98F2011252400949C50 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1581D98E2011252400949C50 /* SettingsViewController.swift */; };
+		15BAF7842026B33B004E7CCF /* spa.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 15BAF7832026B33B004E7CCF /* spa.gpx */; };
 		2F4411148969471FC4DC9ECE /* Pods_cyclesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4789181841B1BADA8D4E3D60 /* Pods_cyclesTests.framework */; };
 		8B00843DDDF43A5DCD54C9D3 /* Pods_cycles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C7C667DFC8C9EF71A5782E /* Pods_cycles.framework */; };
 		D60DDB1AE6350E1F6E26D6EA /* Pods_cyclesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D53CF2B28DA948A4B4A88F /* Pods_cyclesUITests.framework */; };
@@ -51,7 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1500B5741FC53E7000E5C3AD /* cycleDataAllModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = cycleDataAllModel.mlmodel; sourceTree = "<group>"; };
+		15155C5F201568B300788156 /* home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = home.gpx; sourceTree = "<group>"; };
 		1526B5B3200FAF13007DE6CA /* tokens.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = tokens.sh; path = "Build-Phases/tokens.sh"; sourceTree = "<group>"; };
 		154111871FB160AF0026DC3F /* SaveSexualHealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSexualHealthData.swift; sourceTree = "<group>"; };
 		154111891FB16ADD0026DC3F /* MucusQualityStringRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MucusQualityStringRepresentation.swift; sourceTree = "<group>"; };
@@ -80,6 +86,12 @@
 		15640676200E7A17002E9ADC /* AppNavigationDrawerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationDrawerController.swift; sourceTree = "<group>"; };
 		15640678200E7AAB002E9ADC /* AppToolbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppToolbarController.swift; sourceTree = "<group>"; };
 		1564067A200E7B79002E9ADC /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		15694BC3202126CC00FE087A /* rachel-apartment.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "rachel-apartment.gpx"; sourceTree = "<group>"; };
+		15694BC5202127B000FE087A /* hospital.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = hospital.gpx; sourceTree = "<group>"; };
+		15694BC7202127D200FE087A /* wch.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = wch.gpx; sourceTree = "<group>"; };
+		156D0CD72048A25E00651DB3 /* cycleDataAllModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = cycleDataAllModel.mlmodel; sourceTree = "<group>"; };
+		1581D98E2011252400949C50 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		15BAF7832026B33B004E7CCF /* spa.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = spa.gpx; sourceTree = "<group>"; };
 		1EF7E65FB17FE833EEB3F328 /* Pods-cycles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cycles.release.xcconfig"; path = "Pods/Target Support Files/Pods-cycles/Pods-cycles.release.xcconfig"; sourceTree = "<group>"; };
 		35D53CF2B28DA948A4B4A88F /* Pods_cyclesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cyclesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4789181841B1BADA8D4E3D60 /* Pods_cyclesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cyclesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +135,7 @@
 		155A34F71FB1227D00E70572 = {
 			isa = PBXGroup;
 			children = (
+				156D0CD92048A26B00651DB3 /* Location Files */,
 				155A35021FB1227D00E70572 /* cycles */,
 				155A351B1FB1227D00E70572 /* cyclesTests */,
 				155A35261FB1227D00E70572 /* cyclesUITests */,
@@ -158,7 +171,6 @@
 				155A35131FB1227D00E70572 /* Info.plist */,
 				155A35471FB1369D00E70572 /* userInfo.plist */,
 				155A353A1FB1240D00E70572 /* GoogleService-Info.plist */,
-				1500B5741FC53E7000E5C3AD /* cycleDataAllModel.mlmodel */,
 			);
 			path = cycles;
 			sourceTree = "<group>";
@@ -184,6 +196,7 @@
 		155A353C1FB1250300E70572 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				156D0CD72048A25E00651DB3 /* cycleDataAllModel.mlmodel */,
 				155A35431FB12A6C00E70572 /* DateExtension.swift */,
 				155A354B1FB14BFD00E70572 /* GenderStringRepresentation.swift */,
 				154111891FB16ADD0026DC3F /* MucusQualityStringRepresentation.swift */,
@@ -195,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				155A353F1FB1255E00E70572 /* SignInViewController.swift */,
+				1581D98E2011252400949C50 /* SettingsViewController.swift */,
 				155A35491FB1372300E70572 /* HomeViewController.swift */,
 			);
 			path = "View Controllers";
@@ -218,6 +232,18 @@
 				1564067A200E7B79002E9ADC /* LeftMenuViewController.swift */,
 			);
 			path = Material;
+			sourceTree = "<group>";
+		};
+		156D0CD92048A26B00651DB3 /* Location Files */ = {
+			isa = PBXGroup;
+			children = (
+				15155C5F201568B300788156 /* home.gpx */,
+				15694BC7202127D200FE087A /* wch.gpx */,
+				15694BC3202126CC00FE087A /* rachel-apartment.gpx */,
+				15694BC5202127B000FE087A /* hospital.gpx */,
+				15BAF7832026B33B004E7CCF /* spa.gpx */,
+			);
+			path = "Location Files";
 			sourceTree = "<group>";
 		};
 		27979CCD2BCB00A0B93E6AA6 /* Frameworks */ = {
@@ -373,10 +399,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15BAF7842026B33B004E7CCF /* spa.gpx in Resources */,
+				15694BC8202127D200FE087A /* wch.gpx in Resources */,
 				155A35121FB1227D00E70572 /* LaunchScreen.storyboard in Resources */,
 				155A353B1FB1240D00E70572 /* GoogleService-Info.plist in Resources */,
+				15155C60201568B300788156 /* home.gpx in Resources */,
 				155A350F1FB1227D00E70572 /* Assets.xcassets in Resources */,
 				155A35481FB1369D00E70572 /* userInfo.plist in Resources */,
+				15694BC6202127B000FE087A /* hospital.gpx in Resources */,
+				15694BC4202126CC00FE087A /* rachel-apartment.gpx in Resources */,
 				155A350D1FB1227D00E70572 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,10 +656,11 @@
 				155A35441FB12A6C00E70572 /* DateExtension.swift in Sources */,
 				155A35421FB1262B00E70572 /* HealthKitManager.swift in Sources */,
 				155A35041FB1227D00E70572 /* AppDelegate.swift in Sources */,
+				1581D98F2011252400949C50 /* SettingsViewController.swift in Sources */,
 				155A354C1FB14BFD00E70572 /* GenderStringRepresentation.swift in Sources */,
 				1564067B200E7B79002E9ADC /* LeftMenuViewController.swift in Sources */,
 				155A35401FB1255E00E70572 /* SignInViewController.swift in Sources */,
-				1500B5751FC53E7000E5C3AD /* cycleDataAllModel.mlmodel in Sources */,
+				156D0CD82048A25E00651DB3 /* cycleDataAllModel.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
