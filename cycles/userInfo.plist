@@ -6,7 +6,7 @@
 	<string></string>
 	<key>user_email</key>
 	<string></string>
-	<key>user_name</key>
+	<key>user_first_name</key>
 	<string></string>
 	<key>user_gender</key>
 	<string></string>
@@ -14,7 +14,7 @@
 	<string></string>
 	<key>user_phone_number</key>
 	<string></string>
-	<key>gUser_full_name</key>
+	<key>user_full_name</key>
 	<string></string>
 	<key>user_id</key>
 	<string></string>

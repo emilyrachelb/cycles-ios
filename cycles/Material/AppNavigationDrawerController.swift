@@ -1,9 +1,9 @@
 //
 //  AppNavigationDrawerController.swift
-//  cycles
+//  locate
 //
-//  Created by Samantha Emily-Rachel Belnavis on 2018-01-16.
-//  Copyright © 2018 Samantha Emily-Rachel Belnavis. All rights reserved.
+//  Created by Samantha Emily-Rachel Belnavis on 2017-12-15.
+//  Copyright © 2017 Samantha Emily-Rachel Belnavis. All rights reserved.
 //
 
 import UIKit
@@ -55,3 +55,4 @@ extension AppNavigationDrawerController: NavigationDrawerControllerDelegate {
     print("navigationDrawerController statusBar is hidden:", isHidden ? "Yes" : "No")
   }
 }
+

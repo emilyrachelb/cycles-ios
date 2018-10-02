@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
   
   // user info reference variables
   let cloudstoreFile = "cloudstore_profile"
-  let userId = "userId"
+  let userId = "user_id"
   let userEmail = "user_email"
   let userFirstName = "user_first_name"
   let userFullName = "user_full_name"
@@ -41,29 +41,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     FirebaseApp.configure()
     
     // start plistManager
-    plistManager.start(plistNames: [localUserInfo, appPreferences], logging: true)
+    plistManager.start(plistNames: [localUserInfo], logging: true)
     
     // google signin manager
     GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
     GIDSignIn.sharedInstance().delegate = self
     
-//    do {
-//      Client.shared = try Client(dsn: "https://a235b473014c4ecb8aa1a47cbadbd159:160b6c121c124d94826fb94227f84559@sentry.io/255032")
-//      try Client.shared?.startCrashHandler()
-//    } catch let error {
-//      print("\(error)")
-//    }
-//
-//    Client.shared?.crash()
-    return true
-  }
-  private func application (_ application: UIApplication,willFinishLaunchingWithOptions launchOptions: [NSObject : Any]?) -> Bool {
     do {
       Client.shared = try Client(dsn: "https://a235b473014c4ecb8aa1a47cbadbd159:160b6c121c124d94826fb94227f84559@sentry.io/255032")
       try Client.shared?.startCrashHandler()
     } catch let error {
       print("\(error)")
     }
+    
     return true
   }
   
@@ -130,6 +120,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             "user_gender": "not set",
             "user_pronouns": "not set",
             "health_info": [
+              "cycle_state": "not set",
               "user_height": "not set",
               "user_weight": "not set",
             ],

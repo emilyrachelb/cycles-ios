@@ -18,7 +18,7 @@ extension HKBiologicalSex {
     case .other:
       return "other"
     case .notSet:
-      return "not_set"
+      return "not_set" 
     }
   }
 }

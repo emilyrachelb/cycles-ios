@@ -1,0 +1,6 @@
+skip_build(true)
+
+scheme("cycles")
+workspace("cycles.xcworkspace")
+devices(["iPhone 7 Plus"])
+output_types("html")

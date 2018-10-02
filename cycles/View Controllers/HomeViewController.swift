@@ -18,6 +18,16 @@ import UIKit
 
 class HomeViewController: UIViewController, GIDSignInUIDelegate {
   
+  fileprivate var infoCard: Card!
+  fileprivate var infoCardContentView: UILabel!
+  fileprivate var infoCardToolbar: Toolbar!
+  fileprivate var infoCardMoreButton: IconButton!
+  fileprivate var infoCardBottomBar: Bar!
+  fileprivate var infoCardDateFormatter: DateFormatter!
+  fileprivate var currentDateLabel: UILabel!
+  fileprivate var dueDateLabel: UILabel!
+  
+  var window: UIWindow?
   // global variables
   let userPrefsPlist = "userInfo"
   let plistManager = SwiftyPlistManager.shared
@@ -79,7 +89,7 @@ class HomeViewController: UIViewController, GIDSignInUIDelegate {
     }
   }
   
-  override func viewDidLoad() {
+  open override func viewDidLoad() {
     super.viewDidLoad()
     if !(GIDSignIn.sharedInstance().hasAuthInKeychain()) {
       performSegue(withIdentifier: "unwindToLoginVC", sender: self)
@@ -96,6 +106,17 @@ class HomeViewController: UIViewController, GIDSignInUIDelegate {
     userGender = (userAgeAndGender?.biologicalSex.stringRepresentation)!
     userAge = String(describing: userAgeAndGender?.age)
     
+    view.backgroundColor = Color.grey.lighten5
+    prepareToolbar()
+    
+    prepareInfoCardDateFormatter()
+    prepareCurrentDateLabel()
+    prepareDueDateLabel()
+    prepareInfoCardMoreButton()
+    prepareInfoCardToolbar()
+    prepareInfoCardContentView()
+    prepareInfoCardBottomBar()
+    prepareInfoCard()
     
   }
   
@@ -110,5 +131,79 @@ class HomeViewController: UIViewController, GIDSignInUIDelegate {
       "user_info.gender": self.userGender,
       "user_info.birthday": self.userBirthday
     ])
+  }
+}
+
+extension HomeViewController {
+  fileprivate func prepareToolbar() {
+    guard let tc = toolbarController else { return }
+    
+    tc.toolbar.title = "Home"
+    tc.toolbar.detail = ""
+  }
+}
+
+extension HomeViewController {
+  fileprivate func prepareInfoCardDateFormatter(){
+    infoCardDateFormatter = DateFormatter()
+    infoCardDateFormatter.locale = Locale(identifier: "en_US")
+    infoCardDateFormatter.setLocalizedDateFormatFromTemplate("MMM-d-yyyy")
+  }
+  
+  fileprivate func prepareCurrentDateLabel() {
+    currentDateLabel = UILabel()
+    
+    // set the font style and font size
+    currentDateLabel.font = RobotoFont.regular(with: 12)
+    currentDateLabel.textColor = Color.blueGrey.base
+    currentDateLabel.text = infoCardDateFormatter.string(from: Date.distantFuture)
+  }
+  
+  fileprivate func prepareInfoCardMoreButton() {
+    infoCardMoreButton = IconButton(image: Icon.cm.moreVertical, tintColor: Color.blueGrey.base)
+  }
+  
+  fileprivate func prepareInfoCardToolbar() {
+    infoCardToolbar = Toolbar(rightViews: [infoCardMoreButton])
+    
+    infoCardToolbar.title = "Test Card"
+    infoCardToolbar.titleLabel.textAlignment = .left
+  }
+  
+  fileprivate func prepareDueDateLabel() {
+    dueDateLabel = UILabel()
+    dueDateLabel.font = RobotoFont.regular(with: 12)
+    dueDateLabel.textColor = Color.blueGrey.base
+    dueDateLabel.text = "Due date: \(infoCardDateFormatter.string(from:Date.distantFuture))"
+  }
+  
+  fileprivate func prepareInfoCardContentView() {
+    infoCardContentView = UILabel()
+    infoCardContentView.numberOfLines = 0
+    infoCardContentView.text = "Test Card"
+    infoCardContentView.font = RobotoFont.regular(with: 14)
+  }
+ 
+  fileprivate func prepareInfoCardBottomBar() {
+    infoCardBottomBar = Bar()
+    infoCardBottomBar.leftViews = [currentDateLabel]
+    infoCardBottomBar.rightViews = [dueDateLabel]
+  }
+  
+  fileprivate func prepareInfoCard() {
+    infoCard = Card()
+    
+    infoCard.toolbar = infoCardToolbar
+    infoCard.toolbarEdgeInsetsPreset = .square3
+    infoCard.toolbarEdgeInsets.bottom = 0
+    infoCard.toolbarEdgeInsets.right = 8
+    
+    infoCard.contentView = infoCardContentView
+    infoCard.contentViewEdgeInsetsPreset = .wideRectangle3
+    
+    infoCard.bottomBar = infoCardBottomBar
+    infoCard.bottomBarEdgeInsetsPreset = .wideRectangle2
+    
+    view.layout(infoCard).horizontally(left: 20, right: 20).top(25)
   }
 }
