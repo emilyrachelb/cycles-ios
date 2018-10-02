@@ -1,0 +1,20 @@
+setup_travis
+default_platform(:ios)
+
+platform :ios do
+  desc "Tests"
+  lane :before_all do
+    ENV["FASTLANE_EXPLICIT_OPEN_SIMULATOR"] = "2"
+  end
+
+  lane :tests do
+    scan(
+      workspace: "cycles.xcworkspace",
+      device: "iPhone 7 Plus",
+      scheme: "cycles",
+      code_coverage: true,
+    )
+
+    gcovr(xml: true)
+  end
+end

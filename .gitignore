@@ -71,3 +71,10 @@ fastlane/test_output
 # Location Files
 *.gpx
 Location\ Files/*
+
+.idea
+ml-tools/train_data/
+ml-tools/bin
+ml-tools/include
+ml-tools/lib
+ml-tools/firebase-admin.json
